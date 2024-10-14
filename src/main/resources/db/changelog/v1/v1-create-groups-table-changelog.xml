@@ -1,0 +1,29 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="v1-1-groups" author="Alex S">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="groups"/>
+            </not>
+        </preConditions>
+        <createTable tableName="groups">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="v1-2-groups" author="Alex S">
+        <preConditions onFail="MARK_RAN">
+                <tableIsEmpty tableName="groups"/>
+        </preConditions>
+        <loadData tableName="groups" file="src/main/resources/db/data/data-group.csv"/>
+    </changeSet>
+</databaseChangeLog>
