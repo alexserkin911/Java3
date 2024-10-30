@@ -1,0 +1,5 @@
+2024-10-23 13:22:25 [INFO ] UserService: sayHallo 10 - INFO
+2024-10-23 13:22:25 [DEBUG] UserService: sayHallo 11 - DEBUG
+2024-10-23 13:40:47 [INFO ] UserService: sayHallo 12 - INFO
+2024-10-23 13:40:47 [DEBUG] UserService: sayHallo 13 - DEBUG
+2024-10-23 13:40:47 [DEBUG] UserService: sayHallo 15 - x = 3, list = [123, 34]
